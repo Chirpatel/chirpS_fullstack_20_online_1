@@ -1,17 +1,17 @@
 #div1
 {
-  background-color: #031321;
+  background-color: black;
   display: flex;
   height:70px;
-  border-bottom: 2px solid pink;
-  border-bottom-right-radius:30px;
-  border-bottom-left-radius:30px;
+  border-bottom: 2px solid white;
+  border-bottom-right-radius:0px;
+  border-bottom-left-radius:00px;
   font-family: consolas;
 }
 
 #div1:hover
 {  cursor: pointer;
-   box-shadow: 0 0 20px pink, 0 0 60px pink, 0 0 100px pink;
+   box-shadow: 0 0 20px skyblue, 0 0 60px skyblue, 0 0 100px skyblue;
 
 }
 a
@@ -19,7 +19,7 @@ a
   position: relative;
   display: inline-block; 
   padding:  15px 30px;
-  color: #2196f3;
+  color: white;
   text-transform: uppercase;
   letter-spacing: 4px;
   text-decoration:none;
