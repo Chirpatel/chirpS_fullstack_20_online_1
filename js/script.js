@@ -1,6 +1,6 @@
 var apikey ="be49570709184423b66b5af8cb05692d"
 var list={
-    "India":"id",
+    "India":"in",
     "US":"us",
     "Australia":"au",
     "Singapore":"sg",
