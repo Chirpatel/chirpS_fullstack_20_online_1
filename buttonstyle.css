@@ -2,10 +2,10 @@
 {
 	margin: 0px;
 	padding: 0px;
-	display: flex;
+	display: relative;
 	justify-content: center;
 	align-items: center;
-	background-color: #031321;
+	background-color:transparent;
 	font-family: consolas;
 }
 button
