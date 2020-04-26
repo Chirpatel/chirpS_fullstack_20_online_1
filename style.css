@@ -3,10 +3,13 @@ body{
     font-family: Open sans;
     background: cover;
 }
-
+.img1{
+    height:25px !important;
+    width: 25px !important;
+    background-color:transparent !important;
+}
 img{
     width: 100%;
-    min-height: 250px;
 }
 
 .main{
@@ -43,20 +46,34 @@ h3{
     padding: 10px;
 
 }
+
+.button1
+{   position: absolute;
+    right:20px;
+    top:10px;
+    font-family: Open sans;
+    background-color: transparent;
+    border:none;
+}
+.button1:hover
+{
+     background-color:none
+
+}
 button
 {   position: absolute;
     right:20px;
     top:10px;
     font-family: Open sans;
     color: #2196f3;
-    background-color: #031321;
-    border:1px solid  #031321;
+    background-color: transparent;
+    border:none;
 }
 button:hover
 {
-     color:#255784;
-     background-color:#2196f3;
-     box-shadow: 0 0 10px #2196f3, 0 0 40px  #2196f3, 0 0 80px #2196f3;
+     color:transparent;
+     background-color:transparent;
+     text-shadow: 0 0 10px #2196f3;
 
 }
  }
@@ -74,16 +91,6 @@ h4{
 
 
 
- #aplayer{
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    margin: 0;
-    box-shadow: 0 -2px 2px #dadada;
-    background-color: #fff;
-    transition: all ease 0.5s;
-} 
 
 h1,a{
     text-align: center;
@@ -96,20 +103,7 @@ span{
     color: #000 !important;
     font-size: 16px;
 }
-.aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-loaded{
-    background: #e0e0e0;
-    height: 4px;
-}
 
-.aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played{
-    height: 4px;
-    background-color: #2196F3 !important;
-}
-
-.aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played .aplayer-thumb{
-    height: 4px;
-    background-color: #2196F3 !important;
-}
 
 
   

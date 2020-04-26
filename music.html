@@ -1,11 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Music</title>
-	<script type="text/javascript" src="paper-full.js"></script>
-	<link rel = "icon" href = "img/music.png" type = "image/x-icon">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Maven+Pro&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="particle/style.css" type="text/css">
 	 <link rel="stylesheet" href="style.css">
 
@@ -14,175 +16,81 @@
 	<div id ='particles-js' style="z-index:-2;"></div>
  <div class="main">
 		<div class="container">
-			<div class="row">
+			<div class="row" id="list">
 				<div class="col-md-12">
 					<h3>New Release
 						<div id="backbutton"  style="background:transparent" ><button><a href="index.html" style="text-decoration: none;">Back</a> </button></div></h3>
-
 				</div>
-
-
-				<div class="col-md-3">
-					<a href="javascript:void();" class="album-poster" data-switch="0">
-					<img src="https://i1.sndcdn.com/artworks-000580538495-tnkdf1-t500x500.jpg" alt="">
-				</a>
-				<h4>Beautiful People</h4>
-				<p>ED - SHEEREN - 2019</p>
-				</div>
-
-				
-				<div class="col-md-3">
-					<a href="javascript:void();" class="album-poster" data-switch="1">
-					<img src="https://i1.sndcdn.com/artworks-000215739785-ju9lyi-t500x500.jpg" alt="">
-				</a>
-				<h4>No Promises</h4>
-				<p>Demi - Lovoto</p>
-				</div>
-
-
-
-
-				<div class="col-md-3">
-					<a href="javascript:void();" class="album-poster" data-switch="2">
-					<img src="https://ringtonezzz.com/UserFiles/cover/img/I_Like_To_Move_It-Reel_2_Real.jpg" alt="">
-				</a>
-				<h4>I Like To Move It</h4>
-				<p>Madagacar</p>
-				</div>
-
-
-
-				<div class="col-md-3">
-					<a href="javascript:void();" class="album-poster" data-switch="3">
-					<img src="https://data.whicdn.com/images/102024825/original.jpg" alt="">
-				</a>
-				<h4>PayPhone</h4>
-				<p>Maroon</p>
-				</div>
-
-
-
-
-				<div class="col-md-3">
-					<a href="javascript:void();" class="album-poster" data-switch="4">
-					<img src="https://images.newrepublic.com/7549c94396f470374a7199d01672b968b74153f8.gif?w=800&q=65&dpi=2.625&h=533" alt="">
-				</a>
-				<h4>Joker</h4>
-				<p>Joker</p>
-				</div>
-
-
-
-				<div class="col-md-3">
-					<a href="javascript:void();" class="album-poster" data-switch="5">
-					<img src="https://images.8tracks.com/cover/i/001/768/229/Coven_fanmix_cover-8794.jpg?rect=0,0,500,500&q=98&fm=jpg&fit=max" alt="">
-				</a>
-				<h4>Seven Devils</h4>
-				<p>The Machine</p>
-				</div>
-
-
-
-				<div class="col-md-3">
-					<a href="javascript:void();" class="album-poster" data-switch="6">
-					<img src="https://i0.wp.com/thegroovecartel.com/wp-content/uploads/2020/03/Alesso-x-DubVision-One-Last-Time.jpg?fit=1080%2C1080&ssl=1" alt="">
-				</a>
-				<h4>One Last Time</h4>
-				<p>Arina Grande</p>
-				</div>
-
-
-
-				<div class="col-md-3">
-					<a href="javascript:void();" class="album-poster" data-switch="7">
-					<img src="https://i1.sndcdn.com/artworks-000412951878-xdku44-t500x500.jpg" alt="">
-				</a>
-				<h4>Happier</h4>
-				<p>Marshmello</p>
-			</div>
-			</div>
-	 
-	
-
 		</div>
 	</div>
 
 
-    <div id="aplayer"></div>
 
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
-	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" ></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
  <script>
+var apikey ="MWJiNmFkNjItZjk2MS00YjIxLTg4NzYtZmVhZjJiYzc5OGI4"
+var limit=32;
+var url=`http://api.napster.com/v2.2/tracks/top?apikey=${apikey}&limit=${limit}`
 
-   $(".album-poster").on('click', function(e){
-	   var dataSwitchId = $(this).attr('data-switch');
-	   console.log(dataSwitchId);
-	   ap.list.switch(dataSwitchId);
-	   ap.play();
-	   $("#aplayer").addClass('showPlayer');
-   });
-
-
-const ap = new APlayer({
-    container: document.getElementById('aplayer'),
-    listFolded: true,     
-	audio: [{
-        name: 'Beautiful People',
-        artist: 'ED SHEEREN',
-        url: 'https://s1.mp3fast.me/1000/10003532.mp3?n=ed-sheeran-feat-khalid-beautiful-people&h=348c4e9e1ed44e1759443b8f95c569c2',
-        cover: 'https://i1.sndcdn.com/artworks-000580538495-tnkdf1-t500x500.jpg'
-    },
-	{
-		name: 'No Promises',
-        artist: 'Demi Lovoto',
-        url: 'https://mp3.gisher.org/download/2122',
-        cover: 'https://i1.sndcdn.com/artworks-000215739785-ju9lyi-t500x500.jpg'		
-	},
-	{
-		name: 'Madagacar',
-        artist: 'Madagacar',
-        url: 'http://dexo.mp3pro.xyz/18dd850a5a42dde3830f3/I%20Like%20To%20Move%20It.mp3',
-        cover: 'https://ringtonezzz.com/UserFiles/cover/img/I_Like_To_Move_It-Reel_2_Real.jpg'
-	},
-	{
-		name: 'PayPhone',
-        artist: 'Maroon',
-        url: 'https://qoret.com/dl/uploads/2019/08/Maroon_5_ft_Wiz_Khalifa_-_Payphone_Qoret.com.mp3',
-        cover: 'https://data.whicdn.com/images/102024825/original.jpg'
-	},
-	{
-		name: 'Joker',
-        artist: 'Joker',
-        url: 'https://www.ringtone.srkh.in/wp-content/uploads/2019/05/Joker-Tone-Derniere-Danse-Version.mp3',
-        cover: 'https://images.newrepublic.com/7549c94396f470374a7199d01672b968b74153f8.gif?w=800&q=65&dpi=2.625&h=533'
-	},
-	{
-		name: 'Seven Devils',
-        artist: 'The Machine',
-        url: 'https://popular-ringtone.com/ring/02/Seven%20Devils_33_6.mp3',
-        cover: 'https://images.8tracks.com/cover/i/001/768/229/Coven_fanmix_cover-8794.jpg?rect=0,0,500,500&q=98&fm=jpg&fit=max'
-	},
-	{
-		name: 'One Last Time',
-        artist: 'Arina Grand',
-        url: 'http://dl.best-music.biz/Music/Top%20Hits/Best%20Hits%20of%20August%202014/Best%20Hits%20of%20August%202014%20%5bInternational%20Hits%5d/09-%20Ariana%20Grande%20-%20One%20Last%20Time.mp3',
-        cover: 'https://i0.wp.com/thegroovecartel.com/wp-content/uploads/2020/03/Alesso-x-DubVision-One-Last-Time.jpg?fit=1080%2C1080&ssl=1'
-	},
-	{
-		name: 'Happier',
-        artist: 'Marshmello',
-        url: 'https://illuminaija.com/wp-content/uploads/2019/08/Marshmello--Bastille-Happier-01.mp3',
-        cover: 'https://i1.sndcdn.com/artworks-000412951878-xdku44-t500x500.jpg'
-	}
-
-]
-
-
+let count=0;
+$(document).ready(function () {
+	$.getJSON(url,function(data){
+	console.log(data)
+	var size="500x500";
+	var extension="jpg";
+	for(let i=0;i<limit;i++){
+		var albumname=data['tracks'][i].albumName;
+		var artistname=data['tracks'][i].artistName;
+		var url=data['tracks'][i].previewURL;
+		var album_id=data['tracks'][i].albumId;
+		var cover=`https://api.napster.com/imageserver/v2/albums/${album_id}/images/${size}.${extension}`
+		var object = document.getElementById('list');
+		var temp = document.createElement('div');
+		temp.classList.add("col-md-3");
+		temp.classList.add("song");
+		let p="player";
+		
+		album_id=p+count.toString();
+		console.log(album_id);
+		count++;
+		temp.innerHTML=`<div class="album-poster " >
+							<img id="${album_id}i" src="${cover}" width="250px" height="250px" style="min-height: 250px;"alt="Cover">
+							<audio id="${album_id}" src="${url}"></audio>
+							<button class="button1" id="${album_id}play" onclick="startPlayback('#${album_id}')"><img class="img1"  src="play.png"></button>
+							<button class="button1" id="${album_id}Stop" onclick="stopPlayback('#${album_id}')" hidden><img class="img1"  src="pause.png"></button>
+							</div>
+						<h4>${albumname}</h4>
+						<p>${artistname}</p>`
+		object.appendChild(temp);
+		}
+	console.log("Yes")
+	});
 });
+let flag=null;
+function stopPlayback(s) {
+if(flag!==null){
+	flag=null;;
+  document.querySelector(s).pause();
+  document.querySelector(`${s}Stop`).hidden=true;
+  document.querySelector(`${s}play`).hidden=false;
+}
+}
+function startPlayback(s) {
+	if(flag===null){
+	flag=s;
+	document.querySelector(`${s}Stop`).hidden=false;
+	document.querySelector(`${s}play`).hidden=true;
+  return document.querySelector(s).play();
+	}else{
+		stopPlayback(flag);
+		startPlayback(s);
+	}
+}
 
 
  </script>
