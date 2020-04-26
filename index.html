@@ -1,202 +1,224 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Index</title>
+	<title>Main Page</title>
 	<script type="text/javascript" src="paper-full.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/1.1.28/howler.js"></script>
+	<link rel="stylesheet" type="text/css" href="circles.css">
+
+	<script type="text/paperscript" canvas="myCanvas">
+		var keyData = {
+			q: {
+				sound: new Howl({
+		  		urls: ['sounds/bubbles.mp3']
+				}),
+				color: '#1abc9c'
+			},
+			w: {
+				sound: new Howl({
+		  		urls: ['sounds/clay.mp3']
+				}),
+				color: '#2ecc71'
+			},
+			e: {
+				sound: new Howl({
+		  		urls: ['sounds/confetti.mp3']
+				}),
+				color: '#3498db'
+			},
+			r: {
+				sound: new Howl({
+		  		urls: ['sounds/corona.mp3']
+				}),
+				color: '#9b59b6'
+			},
+				t: {
+				sound: new Howl({
+		  		urls: ['sounds/dotted-spiral.mp3']
+				}),
+				color: '#34495e'
+			},
+			y: {
+				sound: new Howl({
+		  		urls: ['sounds/flash-1.mp3']
+				}),
+				color: '#16a085'
+			},
+			u: {
+				sound: new Howl({
+		  		urls: ['sounds/flash-2.mp3']
+				}),
+				color: '#27ae60'
+			},
+			i: {
+				sound: new Howl({
+		  		urls: ['sounds/flash-3.mp3']
+				}),
+				color: '#2980b9'
+			},
+			o: {
+				sound: new Howl({
+					urls: ['sounds/glimmer.mp3']
+				}),
+				color: '#8e44ad'
+			},
+			p: {
+				sound: new Howl({
+		  		urls: ['sounds/moon.mp3']
+				}),
+				color: '#2c3e50'
+			},
+			a: {
+				sound: new Howl({
+		  		urls: ['sounds/pinwheel.mp3']
+				}),
+				color: '#f1c40f'
+			},
+			s: {
+				sound: new Howl({
+		  		urls: ['sounds/piston-1.mp3']
+				}),
+				color: '#e67e22'
+			},
+				d: {
+				sound: new Howl({
+		  		urls: ['sounds/piston-2.mp3']
+				}),
+				color: '#e74c3c'
+			},
+			f: {
+				sound: new Howl({
+		  		urls: ['sounds/prism-1.mp3']
+				}),
+				color: '#95a5a6'
+			},
+			g: {
+				sound: new Howl({
+		  		urls: ['sounds/prism-2.mp3']
+				}),
+				color: '#f39c12'
+			},
+			h: {
+				sound: new Howl({
+		  		urls: ['sounds/prism-3.mp3']
+				}),
+				color: '#d35400'
+			},
+			j: {
+				sound: new Howl({
+		  		urls: ['sounds/splits.mp3']
+				}),
+				color: '#1abc9c'
+			},
+			k: {
+				sound: new Howl({
+		  		urls: ['sounds/squiggle.mp3']
+				}),
+				color: '#2ecc71'
+			},
+			l: {
+				sound: new Howl({
+		  		urls: ['sounds/strike.mp3']
+				}),
+				color: '#3498db'
+			},
+			z: {
+				sound: new Howl({
+		  		urls: ['sounds/suspension.mp3']
+				}),
+				color: '#9b59b6'
+			},
+			x: {
+				sound: new Howl({
+		  		urls: ['sounds/timer.mp3']
+				}),
+				color: '#34495e'
+			},
+			c: {
+				sound: new Howl({
+		  		urls: ['sounds/ufo.mp3']
+				}),
+				color: '#16a085'
+			},
+			v: {
+				sound: new Howl({
+		  		urls: ['sounds/veil.mp3']
+				}),
+				color: '#27ae60'
+			},
+			b: {
+				sound: new Howl({
+		  		urls: ['sounds/wipe.mp3']
+				}),
+				color: '#2980b9'
+			},
+			n: {
+				sound: new Howl({
+					urls: ['sounds/zig-zag.mp3']
+				}),
+				color: '#8e44ad'
+			},
+			m: {
+				sound: new Howl({
+		  		urls: ['sounds/moon.mp3']
+				}),
+				color: '#2c3e50'
+			}
+		}
+
+		var circles = [];
+
+		function onKeyDown(event) {
+			if(keyData[event.key]){
+				var maxPoint = new Point(view.size.width, view.size.height);
+				var randomPoint = Point.random();
+				var point = maxPoint * randomPoint;
+				var newCircle = new Path.Circle(point, 500)
+				newCircle.fillColor = keyData[event.key].color;
+				keyData[event.key].sound.play();
+				circles.push(newCircle);
+			}
+		}
+
+		function onFrame(event){
+			for(var i = 0; i < circles.length; i++){
+				circles[i].fillColor.hue += 1;
+				circles[i].scale(.9);
+			}
+		}
+	</script>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css">
-    
-	 <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" type="text/css" href="navbar.css">
 
 </head>
 <body>
 
- 
-	
+
+	<div >
+		<nav id="div1" class="navbar navbar-expand-md  container-fluid">
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+			  <li class="nav-item active">
+				<a class="nav-link" href="#" >HOME <span class="sr-only">(current)</span></a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="index.html">MUSIC <span class="sr-only">(current)</span></a>
+			  </li>
+			  <li class="nav-item active">
+				<a class="nav-link" href="#" >NEWS <span class="sr-only">(current)</span></a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="#">ABOUT-US<span class="sr-only">(current)</span></a>
+			  </li>
+			</ul>
+			
+		  </div>
+		  <img src="logo.png">
+		</nav>
+		</div>	
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
 
-
-
-
-
-
-
-
-
-
-    <div class="main">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<h3>New Release</h3>
-				</div>
-
-				<div class="col-md-3">
-					<a href="javascript:void();" class="album-poster" data-switch="0">
-					<img src="https://i1.sndcdn.com/artworks-000580538495-tnkdf1-t500x500.jpg" alt="">
-				</a>
-				<h4>Beautiful People</h4>
-				<p>ED - SHEEREN - 2019</p>
-				</div>
-
-				
-				<div class="col-md-3">
-					<a href="javascript:void();" class="album-poster" data-switch="1">
-					<img src="https://i1.sndcdn.com/artworks-000215739785-ju9lyi-t500x500.jpg" alt="">
-				</a>
-				<h4>No Promises</h4>
-				<p>Demi - Lovoto</p>
-				</div>
-
-
-
-
-				<div class="col-md-3">
-					<a href="javascript:void();" class="album-poster" data-switch="2">
-					<img src="https://ringtonezzz.com/UserFiles/cover/img/I_Like_To_Move_It-Reel_2_Real.jpg" alt="">
-				</a>
-				<h4>I Like To Move It</h4>
-				<p>Madagacar</p>
-				</div>
-
-
-
-				<div class="col-md-3">
-					<a href="javascript:void();" class="album-poster" data-switch="3">
-					<img src="https://data.whicdn.com/images/102024825/original.jpg" alt="">
-				</a>
-				<h4>PayPhone</h4>
-				<p>Maroon</p>
-				</div>
-
-
-
-
-				<div class="col-md-3">
-					<a href="javascript:void();" class="album-poster" data-switch="4">
-					<img src="https://images.newrepublic.com/7549c94396f470374a7199d01672b968b74153f8.gif?w=800&q=65&dpi=2.625&h=533" alt="">
-				</a>
-				<h4>Joker</h4>
-				<p>Joker</p>
-				</div>
-
-
-
-				<div class="col-md-3">
-					<a href="javascript:void();" class="album-poster" data-switch="5">
-					<img src="https://images.8tracks.com/cover/i/001/768/229/Coven_fanmix_cover-8794.jpg?rect=0,0,500,500&q=98&fm=jpg&fit=max" alt="">
-				</a>
-				<h4>Seven Devils</h4>
-				<p>The Machine</p>
-				</div>
-
-
-
-				<div class="col-md-3">
-					<a href="javascript:void();" class="album-poster" data-switch="6">
-					<img src="https://i0.wp.com/thegroovecartel.com/wp-content/uploads/2020/03/Alesso-x-DubVision-One-Last-Time.jpg?fit=1080%2C1080&ssl=1" alt="">
-				</a>
-				<h4>One Last Time</h4>
-				<p>Arina Grande</p>
-				</div>
-
-
-
-				<div class="col-md-3">
-					<a href="javascript:void();" class="album-poster" data-switch="7">
-					<img src="https://i1.sndcdn.com/artworks-000412951878-xdku44-t500x500.jpg" alt="">
-				</a>
-				<h4>Happier</h4>
-				<p>Marshmello</p>
-			</div>
-			</div>
-	 
-	
-
-		</div>
-	</div>
-
-
-    <div id="aplayer"></div>
-
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
-	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
- <script>
-
-   $(".album-poster").on('click', function(e){
-	   var dataSwitchId = $(this).attr('data-switch');
-	   console.log(dataSwitchId);
-	   ap.list.switch(dataSwitchId);
-	   ap.play();
-	   $("#aplayer").addClass('showPlayer');
-   });
-
-
-const ap = new APlayer({
-    container: document.getElementById('aplayer'),
-    listFolded: true,     
-	audio: [{
-        name: 'Beautiful People',
-        artist: 'ED SHEEREN',
-        url: 'https://s1.mp3fast.me/1000/10003532.mp3?n=ed-sheeran-feat-khalid-beautiful-people&h=348c4e9e1ed44e1759443b8f95c569c2',
-        cover: 'https://i1.sndcdn.com/artworks-000580538495-tnkdf1-t500x500.jpg'
-    },
-	{
-		name: 'No Promises',
-        artist: 'Demi Lovoto',
-        url: 'https://mp3.gisher.org/download/2122',
-        cover: 'https://i1.sndcdn.com/artworks-000215739785-ju9lyi-t500x500.jpg'		
-	},
-	{
-		name: 'Madagacar',
-        artist: 'Madagacar',
-        url: 'http://dexo.mp3pro.xyz/18dd850a5a42dde3830f3/I%20Like%20To%20Move%20It.mp3',
-        cover: 'https://ringtonezzz.com/UserFiles/cover/img/I_Like_To_Move_It-Reel_2_Real.jpg'
-	},
-	{
-		name: 'PayPhone',
-        artist: 'Maroon',
-        url: 'https://qoret.com/dl/uploads/2019/08/Maroon_5_ft_Wiz_Khalifa_-_Payphone_Qoret.com.mp3',
-        cover: 'https://data.whicdn.com/images/102024825/original.jpg'
-	},
-	{
-		name: 'Joker',
-        artist: 'Joker',
-        url: 'https://www.ringtone.srkh.in/wp-content/uploads/2019/05/Joker-Tone-Derniere-Danse-Version.mp3',
-        cover: 'https://images.newrepublic.com/7549c94396f470374a7199d01672b968b74153f8.gif?w=800&q=65&dpi=2.625&h=533'
-	},
-	{
-		name: 'Seven Devils',
-        artist: 'The Machine',
-        url: 'https://popular-ringtone.com/ring/02/Seven%20Devils_33_6.mp3',
-        cover: 'https://images.8tracks.com/cover/i/001/768/229/Coven_fanmix_cover-8794.jpg?rect=0,0,500,500&q=98&fm=jpg&fit=max'
-	},
-	{
-		name: 'One Last Time',
-        artist: 'Arina Grand',
-        url: 'http://dl.best-music.biz/Music/Top%20Hits/Best%20Hits%20of%20August%202014/Best%20Hits%20of%20August%202014%20%5bInternational%20Hits%5d/09-%20Ariana%20Grande%20-%20One%20Last%20Time.mp3',
-        cover: 'https://i0.wp.com/thegroovecartel.com/wp-content/uploads/2020/03/Alesso-x-DubVision-One-Last-Time.jpg?fit=1080%2C1080&ssl=1'
-	},
-	{
-		name: 'Happier',
-        artist: 'Marshmello',
-        url: 'https://illuminaija.com/wp-content/uploads/2019/08/Marshmello--Bastille-Happier-01.mp3',
-        cover: 'https://i1.sndcdn.com/artworks-000412951878-xdku44-t500x500.jpg'
-	}
-
-]
-
-
-});
-
-
- </script>
-
-
-
+	<canvas id="myCanvas" resize></canvas>
 </body>
 </html>
