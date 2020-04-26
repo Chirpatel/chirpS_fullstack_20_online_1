@@ -3,6 +3,6 @@
 
 Our Project is Hosted on
 
-https://tryingsomethingcool.000webhostapp.com/index.html
+[chir.live](https://www.chir.live)
 
-chir.live
+https://tryingsomethingcool.000webhostapp.com/index.html
