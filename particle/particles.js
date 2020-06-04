@@ -23,7 +23,7 @@ var pJS = function(tag_id, params){
         value: 400,
         density: {
           enable: true,
-          value_area: 800
+          value_area: 8000
         }
       },
       color: {
@@ -40,8 +40,8 @@ var pJS = function(tag_id, params){
         },
         image: {
           src: '',
-          width: 100,
-          height: 100
+          width: 10000,
+          height: 10000,
         }
       },
       opacity: {
