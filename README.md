@@ -15,6 +15,6 @@ Walkthrough Availabel in
 https://www.youtube.com/watch?v=ZnEWj4p0H44
 
 
-[chir.live](http://www.chir.live)
+[Site](http://chirps.chir.in/)
 
 
