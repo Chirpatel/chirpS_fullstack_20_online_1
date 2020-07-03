@@ -51,8 +51,20 @@ var list={
 
 function start(country){
     var countryid=list[country];
-    
-    var url=`https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines?country=${countryid}&apiKey=${apikey}`
+    var myHeaders = new Headers();
+	myHeaders.append("Access-Control-Allow-Origin", "*");
+
+	var requestOptions = {
+	method: 'GET',
+	headers: myHeaders,
+	redirect: 'follow'
+	};
+
+	fetch("https://newsapi.org/v2/top-headlines?country=in&apiKey=MWJiNmFkNjItZjk2MS00YjIxLTg4NzYtZmVhZjJiYzc5OGI4", requestOptions)
+	.then(response => response.text())
+	.then(result => console.log(result))
+	.catch(error => console.log('error', error));
+    var url=`https://newsapi.org/v2/top-headlines?country=${countryid}&apiKey=${apikey}`
     $.getJSON(url,function(data){
     console.log(data)
 	console.log(data['articles'][0].title);
